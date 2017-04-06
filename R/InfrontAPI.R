@@ -8,6 +8,9 @@ library(plotly)
 #from = 20170101
 #to = 20170331
 # Request/Response: Get.Symbols
+
+
+#' @export
 Get.Symbols <- function(symbols, fields, from, to) {
     if (missing(symbols)) {
         stop("You need to input a feed and market symbol of class 'character'. \n E.g. \nFEED:TICKER\n, or c(\"LSE:AAL\",\"OSS:STL\"")
@@ -59,6 +62,7 @@ Get.Symbols <- function(symbols, fields, from, to) {
 #symbols <- c("OSS:STL", "SSE:ABB")
 #fields <- c("bid","ask","last")
 
+#' @export
 Get.Live <- function(symbols,fields) {
     if (missing(symbols)) {
         stop("You need to input a feed and market symbol of class 'character'. \n E.g. \nFEED:TICKER\n, or c(\"LSE:AAL\",\"OSS:STL\"")
@@ -94,6 +98,7 @@ Get.Live <- function(symbols,fields) {
 # Get.Overview(feed="OSS") <- without the "chain"
 # Get.Overview(feed="OSS",chain="somechain")
 
+#' @export
 Get.Overview <- function(feed, chain) {
     if (missing(feed)) {
     stop("Feed argument required. \n It must be a string of type 'character'. \n E.g. \"LSE\"")
@@ -125,6 +130,7 @@ Get.Overview <- function(feed, chain) {
         }
 }
 
+#' @export
 Infront.help <- function() {
     cat("      Infront Desktop API for R v1.0 \n ")
     cat("      Mantainer: api@infrontfinance.com \n ")
@@ -136,6 +142,8 @@ Infront.help <- function() {
 #Symbol <- "OSS:STL"
 #from = 20170101
 #to = 20170330
+
+#' @export
 Quick.Chart <- function(Symbol, from, to) {
     require(plotly)
     fillcolor = "#ff6666"
